@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
   <title>Pizzapuodin Etusivu</title>
   <meta charset="utf-8">
@@ -34,7 +34,7 @@
 
   /* Headerin logo ja navigaatiotyyli */
   .header-logo {
-    max-width: 180px; 
+    max-width: 110px; 
     height: auto; 
   }
 
@@ -55,7 +55,7 @@
 
   /* Navigaatio ja alatunniste */
   .navbar, .footer {
-    background-color: #032d03 !important;
+    background-color: var(--dark-bg-color) !important;
   }
 
   .navbar-brand, .nav-link, .footer p {
@@ -63,13 +63,17 @@
   }
 
   .navbar {
-    padding: 0.5rem 1rem; 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--dark-bg-color);
   }
 
   .navbar-nav .nav-link {
     font-size: 1.25rem; 
     color: #fff; 
-    border-radius: 4px;
+    border-radius: 2px;
     transition: color 0.3s, background-color 0.3s, padding 0.3s, box-shadow 0.3s; 
   }
 
@@ -186,7 +190,6 @@
       <!-- Logo -->
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="kuvat/logo.png" alt="Ravintola Pizzapuoti Logo" class="header-logo me-2">
-        <span class="fs-3"> </span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -197,13 +200,13 @@
             <a class="nav-link active" aria-current="page" href="#">Etusivu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Menu</a>
+            <a class="nav-link" href="#our-story">Tarina</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tarina</a>
+            <a class="nav-link" href="#menu">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Yhteystiedot</a>
+            <a class="nav-link" href="#prices">Hinnat</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -215,6 +218,7 @@
     </div>
   </nav>
 </header>
+
 
   
   <main id="alku" class="container-fluid">
@@ -280,7 +284,7 @@
     </section>
 
     <!-- Meidän Tarina -osio -->
-    <section class="my-5 py-5 bg-light">
+    <section id="our-story" class="my-5 py-5 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -323,17 +327,17 @@
     </section>
 
 <!-- Haitari -->
-<section class="my-5">
+<section id="menu" class="my-5">
   <div class="container">
     <div class="accordion" id="menuAccordion">
       <!-- Alkuruoat -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Alkuruoat
           </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#menuAccordion">
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#menuAccordion">
           <div class="accordion-body">
             <ul class="list-unstyled">
               <li class="my-2">
@@ -353,11 +357,11 @@
       <!-- Pääruoat -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             Pääruoat
           </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#menuAccordion">
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#menuAccordion">
           <div class="accordion-body">
             <ul class="list-unstyled">
               <li class="my-2">
@@ -377,8 +381,9 @@
   </div>
 </section>
 
+
   <!-- Hintataulukko -->
-  <section class="my-5">
+<section id="prices" class="my-5"></section>
     <div class="container">
       <h2 class="text-center mb-4">Hintataulukko</h2>
       <div class="table-responsive">
